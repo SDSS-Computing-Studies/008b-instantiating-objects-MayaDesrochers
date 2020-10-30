@@ -73,3 +73,48 @@ Buster dog
 Shih-tzu is owned by Christy
 (10 points) 
 """
+
+class database:
+    animal=""
+    breed = ""
+    name = ""           
+    owner = ""     
+    birthdate = ""        
+
+
+
+    def __init__(self):
+        self.animal = input("Type of animal?:")
+        self.breed = input("Breed?:")
+        self.name = input("Name?:")
+        self.owner = input("Owner?:")
+        self.birthdate = input("Birthdate?:")
+    
+    def display(self):
+        print(""+self.name+","+" "+self.animal)
+        print(""+self.breed+" "+"is owned by"+" "+self.owner)  
+        
+
+animals=[]
+while True:
+    print("1."+ " "+"Enter a new pet")
+    print("2."+ " "+"Retrieve a pet")
+    print("3."+ " "+"Exit")
+    choice=int(input(""))
+            
+    if choice == 1:
+        animals.append( database() )
+        
+   
+    elif choice == 2:
+        pet=""
+        pet=input("Enter pet's name:")
+        index = 0
+        for i in animals:
+            if pet==i.name:
+                animals[index].display()
+            index = index + 1
+
+
+    elif choice == 3:
+        break 
